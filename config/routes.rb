@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'homes/top'
   get 'users/index'
   get 'users/show'
   get 'users/edit'
@@ -6,7 +7,6 @@ Rails.application.routes.draw do
   get 'books/show'
   get 'books/edit'
   devise_for :users
-  
   
   #デバッグ用ルーティング
   devise_scope :user do
