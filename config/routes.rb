@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'homes/about', to: 'homes#about', as: :about
   
   resources :books, only: [:index, :show, :edit, :create, :update, :destroy]
-  resources :users, only: [:index, :show, :edit, :update]
+  resources :users, only: [:index, :edit, :update]
   
   #デバッグ用ルーティング
   devise_scope :user do
