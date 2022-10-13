@@ -1,13 +1,10 @@
 Rails.application.routes.draw do
   root to: 'homes#top'
-  get 'homes/about', to: 'homes#about', as: :about
-  get 'users/index'
-  get 'users/show'
-  get 'users/edit'
-  get 'books/index'
-  get 'books/show'
-  get 'books/edit'
   devise_for :users
+  get 'homes/about', to: 'homes#about', as: :about
+  
+  resources :books, only: [:index, :show, :edit, :create, :update, :destroy]
+  resources :users, only: [:index, :show, :edit, :update]
   
   #デバッグ用ルーティング
   devise_scope :user do
