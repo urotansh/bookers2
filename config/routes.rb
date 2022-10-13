@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'homes/top'
+  root to: 'homes#top'
   get 'users/index'
   get 'users/show'
   get 'users/edit'
