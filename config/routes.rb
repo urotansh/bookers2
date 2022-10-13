@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'homes#top'
+  get 'homes/about', to: 'homes#about', as: :about
   get 'users/index'
   get 'users/show'
   get 'users/edit'
