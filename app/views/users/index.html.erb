@@ -1,2 +1,24 @@
 <h1>Users#index</h1>
 <p>Find me in app/views/users/index.html.erb</p>
+
+<%# ユーザ情報 profile_image,name,introduction %>
+<%# TODO: 部分テンプレート化する  app/views/layouts/_side_menu.html.erb%>
+<%# app/views/books/index.html.erb と同じ%>
+
+<%# ユーザ一覧 %>
+<h1>Users</h1>
+<table border="1">
+  <tr>
+    <th><h4>image</h4></th>
+    <th><h4>name</h4></th>
+    <th><h4></h4></th>
+  </tr>
+  <% @users.each do |user| %>
+  <tr>
+    <%# TODO: プロフィール画像を表示する @book.user.get_profile_image(100, 100) %>
+    <th><%= image_tag "no_image.jpg" %></th>
+    <th><%= link_to user.name %></th>
+    <th><%= link_to "Show", user_path(user.id) %></th>
+  </tr>
+  <% end %>
+</table>
