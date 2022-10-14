@@ -17,5 +17,7 @@
     </th>
     <th><%= @book.title %></th>
     <th><%= @book.body %></th>
+    <th><%= link_to "Edit", edit_book_path(@book.id) %>
+    <th><%= link_to "Destroy", book_path(@book.id), mehod: :delete %>
   </tr>
 </table>
