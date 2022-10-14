@@ -7,6 +7,7 @@
 <h4><%= image_tag 'no_image.jpg' %></h4>
 <h4><%= current_user.name %><h4>
 <h4><%= current_user.introduction %></h4>
+<h4><%= link_to "ユーザ編集", edit_user_path(current_user.id) %></h4>
 
 <h1>New book</h1>
 <%= form_with model: @book do |f| %>
