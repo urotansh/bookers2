@@ -1,10 +1,19 @@
 class UsersController < ApplicationController
   def index
+    # side_menu
+    @user = User.find(current_user.id)
+    @book = Book.new
+    
+    # main_menu
     @users = User.all
   end
   
   def show
+    # side_menu
     @user = User.find(params[:id])
+    @book = Book.new
+    
+    # main_menu
     @books = @user.books
   end
   

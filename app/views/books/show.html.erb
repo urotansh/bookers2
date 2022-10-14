@@ -1,21 +1,20 @@
 <h1>Books#show</h1>
 <p>Find me in app/views/books/show.html.erb</p>
 
-<%# ユーザ情報 profile_image,name,introduction %>
-<%# TODO: 部分テンプレート化する  app/views/layouts/_side_menu.html.erb%>
-<%# app/views/books/index.html.erb と同じ%>
+<%# User info %>
+<%= render 'layouts/side_menu', user: @user, book: @book %>
 
 <%# 投稿詳細 %>
 <h1>Book detail</h1>
 <table border="1">
   <tr>
     <th>
-      <%= image_tag @book.user.get_profile_image(100, 100) %><br>
-      <%= link_to @book.user.name, user_path(@book.user.id) %>
+      <%= image_tag @book_detail.user.get_profile_image(100, 100) %><br>
+      <%= link_to @book_detail.user.name, user_path(@book_detail.user.id) %>
     </th>
-    <th><%= link_to @book.title, book_path(@book.id) %></th>
-    <th><%= @book.body %></th>
-    <th><%= link_to "Edit", edit_book_path(@book.id) %>
-    <th><%= link_to "Destroy", book_path(@book.id), method: :delete, data: {confirm: "本当に消しますか？"} %>
+    <th><%= link_to @book_detail.title, book_path(@book_detail.id) %></th>
+    <th><%= @book_detail.body %></th>
+    <th><%= link_to "Edit", edit_book_path(@book_detail.id) %>
+    <th><%= link_to "Destroy", book_path(@book_detail.id), method: :delete, data: {confirm: "本当に消しますか？"} %>
   </tr>
 </table>

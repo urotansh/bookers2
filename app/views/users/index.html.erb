@@ -1,9 +1,8 @@
 <h1>Users#index</h1>
 <p>Find me in app/views/users/index.html.erb</p>
 
-<%# ユーザ情報 profile_image,name,introduction %>
-<%# TODO: 部分テンプレート化する  app/views/layouts/_side_menu.html.erb%>
-<%# app/views/books/index.html.erb と同じ%>
+<%# User info %>
+<%= render 'layouts/side_menu', user: @user, book: @book %>
 
 <%# ユーザ一覧 %>
 <h1>Users</h1>
