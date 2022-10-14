@@ -5,8 +5,17 @@
 <%# TODO: 部分テンプレート化する  app/views/layouts/_side_menu.html.erb%>
 <h1>User info</h1>
 <h4><%= image_tag 'no_image.jpg' %></h4>
-<h4><%= current_user.name %><h4>
-<h4><%= current_user.introduction %></h4>
+<table border="1">
+  <tr>
+    <th><h4>Name<h4></th>
+    <th><h4><%= current_user.name %><h4></th>
+  </tr>
+  <tr>
+    <th><h4>Introduction</h4></th>
+    <th><h4><%= current_user.introduction %></h4></th>
+  </tr>
+</table>
+
 <h4><%= link_to "ユーザ編集", edit_user_path(current_user.id) %></h4>
 
 <h1>New book</h1>
