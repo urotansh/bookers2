@@ -1,0 +1,15 @@
+<h1>Books</h1>
+<table border="1">
+  <tr>
+    <th><h4>User</h4></th>
+    <th><h4>Title</h4></th>
+    <th><h4>Opinion</h4></th>
+  </tr>
+  <% books.each do |book| %>
+  <tr>
+    <th><%= image_tag book.user.get_profile_image(80, 80) %></th>
+    <th><%= link_to book.title, book_path(book.id) %></th>
+    <th><%= book.body %></th>
+  </tr>
+  <% end %>
+</table>
