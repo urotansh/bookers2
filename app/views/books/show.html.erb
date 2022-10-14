@@ -1,2 +1,21 @@
 <h1>Books#show</h1>
 <p>Find me in app/views/books/show.html.erb</p>
+
+<%# ユーザ情報 profile_image,name,introduction %>
+<%# TODO: 部分テンプレート化する  app/views/layouts/_side_menu.html.erb%>
+<%# app/views/books/index.html.erb と同じ%>
+
+<%# 投稿詳細 %>
+<h1>Book detail</h1>
+<table border="1">
+  <tr>
+    <%# TODO: プロフィール画像を表示する @book.user.get_profile_image(199, 100) %>
+    <th>
+      <%= image_tag "no_image.jpg" %><br>
+      <%# TODO: ユーザ詳細画面へのリンク link_to @book.user.name, user_path(@book.user.id) %>
+      <%= @book.user.name %>
+    </th>
+    <th><%= @book.title %></th>
+    <th><%= @book.body %></th>
+  </tr>
+</table>
