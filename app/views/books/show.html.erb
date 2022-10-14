@@ -12,8 +12,7 @@
     <%# TODO: プロフィール画像を表示する @book.user.get_profile_image(199, 100) %>
     <th>
       <%= image_tag "no_image.jpg" %><br>
-      <%# TODO: ユーザ詳細画面へのリンク link_to @book.user.name, user_path(@book.user.id) %>
-      <%= @book.user.name %>
+      <%= link_to @book.user.name, user_path(@book.user.id) %>
     </th>
     <th><%= @book.title %></th>
     <th><%= @book.body %></th>
