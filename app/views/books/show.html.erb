@@ -9,9 +9,8 @@
 <h1>Book detail</h1>
 <table border="1">
   <tr>
-    <%# TODO: プロフィール画像を表示する @book.user.get_profile_image(199, 100) %>
     <th>
-      <%= image_tag "no_image.jpg" %><br>
+      <%= image_tag @book.user.get_profile_image(100, 100) %><br>
       <%= link_to @book.user.name, user_path(@book.user.id) %>
     </th>
     <th><%= link_to @book.title, book_path(@book.id) %></th>
