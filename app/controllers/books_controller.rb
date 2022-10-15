@@ -27,12 +27,12 @@ class BooksController < ApplicationController
   end
 
   def show
-    # side_menu
-    @user = User.find(current_user.id)
-    @book = Book.new
-    
     # main_menu
-    @book_detail = Book.find(params[:id])
+    @book = Book.find(params[:id])
+    
+    # side_menu
+    @user = @book.user
+    @book_new = Book.new
   end
 
   def edit
