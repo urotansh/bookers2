@@ -1,25 +1,26 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
-
-<%# サイドバー不要 %>
-
-<%# バリデーションエラー %>
-<% if @user.errors.any? %>
-  <h2><%= @user.errors.count %> errors prohibited this obj from being saved:</h2>
-  <ul>
-    <% @user.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-<h1>User info</h1>
-<%= form_with model: @user do |f| %>
-  <h4>Name<h4>
-  <%= f.text_field :name %>
-  <h4>Image</h4>
-  <%= f.file_field :profile_image, accept: "image/*" %>
-  <h4>Introduction</h4>
-  <%= f.text_area :introduction %><br>
-  <%= f.submit "Update User" %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="mx-auto col-lg-6">
+      <%# バリデーションエラー %>
+      <% if @user.errors.any? %>
+        <h2><%= @user.errors.count %> errors prohibited this obj from being saved:</h2>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      
+      <h1>User info</h1>
+      <%= form_with model: @user do |f| %>
+        <%= f.label :name, 'Name'  %><br>
+        <%= f.text_field :name, class: "form-control w100" %><br>
+        <%= f.label :image, 'Image' %><br>
+        <%= f.file_field :profile_image, accept: "image/*" %><br><br>
+        <%= f.label :introduction, 'Introduction' %><br>
+        <%= f.text_area :introduction, class: "form-control w100" %><br><br>
+        <%= f.submit "Update User", class: "btn btn-secondary btn-lg" %>
+      <% end %>
+    </div>
+  </div>
+</div>
