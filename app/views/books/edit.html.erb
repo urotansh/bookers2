@@ -1,6 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="mx-auto col-lg-6">
+      
+      <h1>Editing Book</h1>
+      
       <%# バリデーションエラー %>
       <% if @book.errors.any? %>
         <h2><%= @book.errors.count %> errors prohibited this obj from being saved:</h2>
@@ -11,7 +14,6 @@
         </ul>
       <% end %>
       
-      <h1>Editing Book</h1>
       <%= form_with model: @book do |f| %>
         <%= f.label :title %><br>
         <%= f.text_field :title, class: "form-control w100" %><br>

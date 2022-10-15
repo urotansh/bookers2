@@ -1,6 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="mx-auto col-lg-6">
+      
+      <h1>User info</h1>
+      
       <%# バリデーションエラー %>
       <% if @user.errors.any? %>
         <h2><%= @user.errors.count %> errors prohibited this obj from being saved:</h2>
@@ -11,7 +14,6 @@
         </ul>
       <% end %>
       
-      <h1>User info</h1>
       <%= form_with model: @user do |f| %>
         <%= f.label :name, 'Name'  %><br>
         <%= f.text_field :name, class: "form-control w100" %><br>
