@@ -1,22 +1,21 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
-
 <%# User info %>
 <%= render 'layouts/side_menu', user: @user, book: @book_new %>
 
-<%# 投稿詳細 %>
-<h1>Book detail</h1>
-<table border="1">
-  <tr>
-    <th>
-      <%= image_tag @user.get_profile_image(100, 100) %><br>
-      <%= link_to @user.name, user_path(@user.id) %>
-    </th>
-    <th><%= link_to @book.title, book_path(@book.id) %></th>
-    <th><%= @book.body %></th>
-    <% if @user == current_user %>
-    <th><%= link_to "Edit", edit_book_path(@book.id) %>
-    <th><%= link_to "Destroy", book_path(@book.id), method: :delete, data: {confirm: "本当に消しますか？"} %>
-    <% end %>
-  </tr>
-</table>
+<div class="col-lg-8">
+  <%# 投稿詳細 %>
+  <h1>Book detail</h1>
+  <table class="table">
+    <tr>
+      <th>
+        <%= image_tag @user.get_profile_image(100, 100) %><br>
+        <%= link_to @user.name, user_path(@user.id) %>
+      </th>
+      <th><%= link_to @book.title, book_path(@book.id) %></th>
+      <th><%= @book.body %></th>
+      <% if @user == current_user %>
+      <th><%= link_to "Edit", edit_book_path(@book.id) %>
+      <th><%= link_to "Destroy", book_path(@book.id), method: :delete, data: {confirm: "本当に消しますか？"} %>
+      <% end %>
+    </tr>
+  </table>
+</div>

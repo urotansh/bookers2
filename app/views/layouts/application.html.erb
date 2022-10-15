@@ -14,7 +14,7 @@
     <header class="bg-dark">
       <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-          <a class="navbar-brand p-3 text-white" href="/">
+          <a class="navbar-brand text-white" href="/">
             <h4>Bookers</h4>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -74,7 +74,11 @@
     
     <main>
     <p><%= flash[:success] %></p>
-    <%= yield %>
+      <div class="container">
+        <div class="row mx-auto">
+          <%= yield %>
+        </div>
+      </div>
     </main>
     
     <footer>
