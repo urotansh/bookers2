@@ -14,7 +14,9 @@
     </th>
     <th><%= link_to @book_detail.title, book_path(@book_detail.id) %></th>
     <th><%= @book_detail.body %></th>
+    <% if @book_detail.user == current_user %>
     <th><%= link_to "Edit", edit_book_path(@book_detail.id) %>
     <th><%= link_to "Destroy", book_path(@book_detail.id), method: :delete, data: {confirm: "本当に消しますか？"} %>
+    <% end %>
   </tr>
 </table>
